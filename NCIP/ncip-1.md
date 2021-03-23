@@ -63,7 +63,7 @@ An NCIP can also be superseded by a different NCIP, rendering the original obsol
 
 ## Work Flow Diagram
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9f97f9fe-53f6-415a-8ad5-3a118628e57c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9f97f9fe-53f6-415a-8ad5-3a118628e57c/Untitled.png)
+![Work Flow](ncip-1/workflow.png)
 
 Source: [BIP-1](https://github.com/bitcoin/bips/blob/master/bip-0001.mediawiki).
 
@@ -101,12 +101,12 @@ Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
 
 The current NCIP editors are:
 
-- Kijun Seo (@kijun)
-- JC Kim (@jckdotim)
-- Swen Mun (@longfin)
-- Yujeong Nam (@Namyujeong)
-- Caesty (@caesty)
-- Edward Thomson (@EdwardAThomson)
+- Kijun Seo ([@kijun](https://github.com/kijun))
+- JC Kim ([@jckdotim](https://github.com/jcdotkim))
+- Swen Mun ([@longfin](https://github.com/longfin))
+- Yujeong Nam ([@Namyujeong](https://github.com/namyujeong))
+- Caesty ([@caesty](https://github.com/caesty))
+- Edward Thomson ([@EdwardAThomson](https://github.com/edwardathomson))
 
 For each new NCIP that comes in, an editor does the following:
 
