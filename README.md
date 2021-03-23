@@ -12,7 +12,7 @@ An NCIP is a design document providing information to the Nine Chronicles commun
 [9c]: https://nine-chronicles.com
 [9c-banner]: 9c-banner.jpeg
 
-**Before you initiate a pull request**, please read the [NCIP-1](ncip/ncip-1.md) document. Ideas should be thoroughly discussed on the [Discord][Discord] channels prior to opening a pull request.
+**Before you initiate a pull request**, please read the [NCIP-1](NCIP/ncip-1.md) document. Ideas should be thoroughly discussed on the [Discord][Discord] channels prior to opening a pull request.
 
 NCIPs in draft stage can be hosted on online document editing tools such as Google Docs to facilitate collaborative editing.
 Once an NCIP is submitted for review, our editors can help you to import the document to Github.
