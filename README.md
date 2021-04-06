@@ -22,3 +22,4 @@ Once an NCIP is submitted for review, our editors can help you to import the doc
 | Number | Title | Owner | Type | Status |
 | ------ | ----- | ----- | ---- | ------ |
 | [1](NCIP/ncip-1.md) | NCIP Purpose and Guidelines | Edward Thomson, Kijun Seo | Ecosystem | Active |
+| [2](https://bit.ly/ncip-2-gdrive) | Arena Competitive Rework | Wabbs, Pooh, Zaijal, Kijun | Core | Draft |
