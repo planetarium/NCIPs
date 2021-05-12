@@ -25,3 +25,4 @@ Once an NCIP is submitted for review, our editors can help you to import the doc
 | [2](https://bit.ly/ncip-2-gdrive) | Arena Competitive Rework | Wabbs, Pooh, Zaijal, Kijun | Core | Draft |
 | [3](https://docs.google.com/document/d/1LVKApuPynCvPfDaShc5m8gqwWNao3MgXDCHt4G7FuAM/edit) | Guilds Part 1 | Zaijal, Valhalla Guild | Core | Draft |
 | [4](https://docs.google.com/document/d/1YcHchHDYIXchSEleFkYTMgz67h32es9qjSDh_pfcoR0/edit) | Peer-to-peer Item Transfer | Wabbs, Edward T | Core | Draft |
+| [5](https://docs.google.com/document/d/1CqqaMllJYgLQU-SktrfzlxkfNIYFOeKz5fRldCEoDKw/edit) | Enchantment System | Wabbs, Valhalla Guild | Core | Draft |
