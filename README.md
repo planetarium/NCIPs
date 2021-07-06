@@ -26,3 +26,7 @@ Once an NCIP is submitted for review, our editors can help you to import the doc
 | [3](https://docs.google.com/document/d/1LVKApuPynCvPfDaShc5m8gqwWNao3MgXDCHt4G7FuAM/edit) | Guilds Part 1 | Zaijal, Valhalla Guild | Core | Draft |
 | [4](https://docs.google.com/document/d/1YcHchHDYIXchSEleFkYTMgz67h32es9qjSDh_pfcoR0/edit) | Peer-to-peer Item Transfer | Wabbs, Edward T | Core | Draft |
 | [5](https://docs.google.com/document/d/1CqqaMllJYgLQU-SktrfzlxkfNIYFOeKz5fRldCEoDKw/edit) | Enchantment System | Wabbs, Valhalla Guild | Core | Draft |
+| [6](https://docs.google.com/document/d/13huajtuFlEQDAbu2CK65ibInLMmgF_a7zpXKwWkVKsc/edit) | World Bosses | Wabbs, FioX | Core | Draft |
+| [7](https://docs.google.com/document/d/1YuMCoblhQuRyPICzGVnrut-oGGWJZ9rnoY1cZR7KFNs/edit) | Valuable Drops | Wabbs | Core | Draft |
+| [8](https://docs.google.com/document/d/1ZoVPjNrIzLSVemxVYBE4K20j223zCBwh5Iqp1YvuMPw/edit) | Mimisbrunnr Rework | Wabbs, Kato | Core | Draft |
+| [9](https://docs.google.com/document/d/1aXJY3IrNR3cquQKlf07dRSbS5szcqjMMyfzpbz-UqF4/edit) | Daily Endgame Reward | Yoinked | Core | Draft |
