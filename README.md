@@ -30,3 +30,4 @@ Once an NCIP is submitted for review, our editors can help you to import the doc
 | [7](https://docs.google.com/document/d/1YuMCoblhQuRyPICzGVnrut-oGGWJZ9rnoY1cZR7KFNs/edit) | Valuable Drops | Wabbs | Core | Draft |
 | [8](https://docs.google.com/document/d/1ZoVPjNrIzLSVemxVYBE4K20j223zCBwh5Iqp1YvuMPw/edit) | Mimisbrunnr Rework | Wabbs, Kato | Core | Draft |
 | [9](https://docs.google.com/document/d/1aXJY3IrNR3cquQKlf07dRSbS5szcqjMMyfzpbz-UqF4/edit) | Daily Endgame Reward | Yoinked | Core | Draft |
+| [10](https://docs.google.com/document/d/1ErZ5JQia03KqXRG6IRZ7SORfnxMLZfJg4patVKFGX5Y/edit) | Whitelisted PoW Transition | JC Kim, Edward Thomson, Swen Mun, Kijun Seo | Core | Draft | 
