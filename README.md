@@ -31,8 +31,7 @@ Once an NCIP is submitted for review, our editors can help you to import the doc
 | [8](https://docs.google.com/document/d/1ZoVPjNrIzLSVemxVYBE4K20j223zCBwh5Iqp1YvuMPw/edit) | Mimisbrunnr Rework | Wabbs, Kato | Core | Draft |
 | [9](https://docs.google.com/document/d/1aXJY3IrNR3cquQKlf07dRSbS5szcqjMMyfzpbz-UqF4/edit) | Daily Endgame Reward | Yoinked | Core | Draft |
 | [10](https://docs.google.com/document/d/1ErZ5JQia03KqXRG6IRZ7SORfnxMLZfJg4patVKFGX5Y/edit) | Whitelisted PoW Transition | JC Kim, Edward Thomson, Swen Mun, Kijun Seo | Core | Draft | 
-| [11](https://docs.google.com/document/d/1L1weDXISdaCZI2B9Fc7XM__cay-oOAci8-vkwYCus0U/edit) | Crystals / Item Grinder | Wabbs, Yoinked | Core | Draft | 
+| [11](https://docs.google.com/document/d/1L1weDXISdaCZI2B9Fc7XM__cay-oOAci8-vkwYCus0U/edit) | Crystals / Item Grinder | Wabbs, Yoinked | Core | Active | 
 | [12](https://docs.google.com/document/d/1ppclOTy-9yYhbveFJBkssZbfJb54aZRUYWNBezfsJDE/edit) | Rewarding Mechanism & Event Rotations | Wabbs | Core | Draft | 
-| [13](https://docs.google.com/document/d/1L8d3KyO_Z6_BYcmDeMs-yv_SBYiEHiq_4kT0CjBmlFY/edit) | PoS Transition | JC Kim, Swen | Core | Draft |
-| [14](https://docs.google.com/document/d/1oRftGvdTEaeH4zh2XYa6dToHZ394x5JeU_a7bRIPxM0/edit?usp=sharing) | Opening an Internal Lending Service | JH Kim | Ecosystem | Draft |
-
+| [13](https://docs.google.com/document/d/1L8d3KyO_Z6_BYcmDeMs-yv_SBYiEHiq_4kT0CjBmlFY/edit) | PoS Transition | JC Kim, Swen | Core | Accepted |
+| [14](https://docs.google.com/document/d/1oRftGvdTEaeH4zh2XYa6dToHZ394x5JeU_a7bRIPxM0/edit?usp=sharing) | Opening an Internal Lending Service | JH Kim | Ecosystem | Accepted |
