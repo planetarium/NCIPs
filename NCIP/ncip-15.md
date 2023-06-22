@@ -4,7 +4,7 @@ Title: Usage based transaction limiting, and migrating from activation system
 Status: Draft
 Type: Core
 Author: Swen Mun <swen@planetariumhq.com>, Gilhwan Cheong <gil@planetariumhq.com>, Libplanet Team <libplanet@planentariumhq.com> et al.
-Created: 2023-06-03
+Created: 2023-06-23
 ---
 
 # Abstract
@@ -51,16 +51,28 @@ At the same time, this proposal aims to leave the current experience in normal c
 
 ## Concepts
 ### Gas & Gas Price
-* **Gas** is logical units about action execution. 
-    * it can be defined on policy per action.
-    * it will be determined during action evaluation.
-* **Gas Price** is tagged price by transaction signer. it represents 
+* **Gas** is logical units to measure action execution. 
+    * Gas can be defined on policy per action.
+    * Gas will be determined during action evaluation.
+* **Gas Price** is tagged price by transaction signer. 
+    * Gas Price represents the willing to pay of signers.
+    * Gas Price can be any fungible asset values upon data type level.
+    * Gas Price can be zero or null. in that case, no charges are deducted regardless of the amount of gas consumed.
+    * Gas Price will be referred by validators while block proposal.
 
 Basically, execution measuring and charging is similar to other public blockchain network, such as [Ethereum](https://ethereum.org/en/).
 
 ### Mead
 * **Mead** is a new fungible token for transaction fee system.
 * it has different lifecycle and economics per phases. (see also "Phases" section)
+* During "fill-in" phase, Mead is simple fungible asset value and can be defined as below
+    ```python
+    {
+        'decimalPlaces': b'\x12', 
+        'minters': None, 
+        'ticker': 'Mead'
+    }
+    ```
 
 ### Pledge, between Agent and Patron
 **Pledge** system is introduced to mimic current free to play experience, based on transaction fee system. it can be considered as a sort of fee-delegation.
@@ -69,30 +81,30 @@ Basically, execution measuring and charging is similar to other public blockchai
 * **Patron** is also Nine Chronicle accounts that provides Mead to **Agent**.
     * Agent can be Patron for other player (after Validator Centric phase)
 * **Pledge** is a sort of contract between Agent and Patron.
-    * it's stored as chain state per Agent.
-    * it contains detail specs for Mead providing.
+    * It's stored as chain state per Agent.
+    * It contains detail specs for Mead providing.
 * When Agent's Mead balance reaches threshold described its Pledge, configured amount of Mead will be transferred from Patron to Agent automatically.
 
 ### Migrator
 * **Migrator** is a patron having special purpose.
-    * as name suggests, it's be designed for "fill-in" phase migration only.
-    * after Validator Centric phase, all Migrators will turn to normal patron.
+    * As name suggests, it's be designed for "fill-in" phase migration only.
+    * After Validator Centric phase, all Migrators will turn to normal patron.
 * Migrator should contract *all* accounts in the network and provide Mead automatically until end of "fill-in" phase.
 
 ## Phases
 ### 1. "fill-in" (2023 Q3)
 In "fill-in" phase, activation system will be replaced with transaction fee system, without any other economic changes.
 
-* From this phase, activation system will not be used in protocol level.
+* From this phase, previous activation checking will not be used in protocol level.
 * In this phase, Mead will be created for Migrator only.
 * All action expect transfer Mead uses 1 Gas.
-    * To prevent preserving Mead by other than Migrator account, transferring Mead action uses 4 Gas (higher value than charge amount described in Pledge)
+    * To prevent accumulating Mead by non-Migrator account, transferring action uses 4 Gas (higher value than charge amount described in Pledge)
 
 ### 2. Validator Centric (2024 H1)
-After confirming fee system works well, we should move the focus to its creation and distribution. its main purpose is, incentivize validators and delegators systemically.
+After confirming fee system works well, we should move the focus to its creation and distribution. its main purpose is, incentivize validators and delegators by protocol reward. 
 
 * From this phase, every Mead should be created as block rewards, instead of manual minting.
-* To achieve, detailed token economics for Mead should be designed completely.
+    * To achieve, detailed token economics for Mead should be designed completely.
 * Also, it should be defined that more detailed Gas usages instead of static values (i.e., 1 or 4).
 
 ### 3. Market Building (2024 H2)
@@ -105,19 +117,63 @@ In the long run, the fee-based limiting system is strongly dependent on the valu
 ### Current (Phase 0) → "fill-in"
 * During "fill-in" phase, Migrator who will be responsible for the migration should be chosen.
 * After choosing Migrator, the calculated maximum amount of Mead that can be used during the "fill-in" will be transferred to the Migrator.
-    * Example of calculation: `4` (max gas usages) * `7200` (blocks per day) * `100` (transactions per block) * `365` (expected days for "fill-in")
+    * Calculation: `4` (max gas usages) * `7200` (blocks per day) * `100` (transactions per block) * `365` (expected days for "fill-in")
 * Previous activated accounts will be contracted with Migrator upon its Pledge.
-    * for Pledges, Migrator should provide APIs and clients as public.
-    * Pledge should be configured as providing `4` Mead since current mempool policy is allowing 4 transactions from one account per block.
+    * For proceeding with the Pledge publicly, Migrator should provide APIs and compatible client implementation as public.
+    * Pledge should be configured as providing `4` Mead, since current major mempool policy is allowing 4 transactions from one account per block.
 
 ### "fill-in" → Validator Centric
 * To prevent confusing, all of previous Mead will be removed from system.
 * Because Migrators can no longer receive Mead in a special way, they must delegate a sufficient amount of NCG to receive Mead through block rewards.
 
-
 # Backward compatibility 
-* This proposal requires additional actions for Pledge, and new currency for Mead. therefore it requires hard-fork and every nodes in the network must be updated to apply this changes.
-* Also, it brings significant changes for transaction layout. 
-    * In detail, every transaction should specifies `MaxGasPrice` field as `1 * Mead`, and `GasLimit` field as `4` during "fill-in" phase.
-    * For sake of previous chain compatibility, `MaxGasPrice` and `GasLimit` fields are null-able. but after applying this proposal, any tx that doesn't have `MaxGasPrice` and `GasLimit`, will be ignored by validator, due to policy.
+* This proposal requires additional actions for Pledge, and new currency for Mead. 
+    * Therefore it requires hard-fork and every nodes in the network must be updated to apply this changes.
+* Also, this proposal brings some changes for transaction data structure and semantics.
+    * Every transaction should specifies `MaxGasPrice` field (`0x6c`, `'m'`) as `1 * Mead`, and `GasLimit` field(`0x6d`, '`l`') as `4` during "fill-in" phase.
+        * Example with `MaxGasPrice` and `GasLimit` (using [bencodex-python][])
+            ```python
+            {
+                # Signature
+                b'S': b'0E\x02!\x00\xf5\xbeH\x80-\xb7\x1b\xad\xd7:\xf8\xb5\x9b\xe9\x10BESL\xed\x8a\xdc\x94Y\xad\x0c,\xb8\x85\x84\xc4\x02 B\x88\xd1\xe9\x10P:\xcc\xbf-D\xcer\xce\x05"\x15Sd`&H)\x05\x96\xf8\xd6o\xcc\xe0\x0e\x03',
+                # Raw action value
+                b'a': [
+                    {
+                        'type_id': 'create_avatar8',
+                        'values': {
+                            'ear': 0,
+                            'hair': 0,
+                            'id': b'Bs-\x81\x88\r\x0cG\x94G\x88~\xa0_\x96\xc0',
+                            'index': 0,
+                            'lens': 0,
+                            'name': 'x1ng1',
+                            'tail': 0
+                        }
+                    }
+                ],
+                # Genesis block hash
+                b'g': b'E\x82%\r\r\xa3;\x06w\x9a\x84u\xd2\x83\xd5\xdd!\x0ch;\x9b\x99\x9dt\xd0?\xacOX\xfak\xce',
+                # GasLimit
+                b'l': 4,
+                # MaxGasPrice (see also Mead section for the currency spec)
+                b'm': [{'decimalPlaces': b'\x12', 'minters': None, 'ticker': 'Mead'},
+                        1000000000000000000],
+                # Nonce
+                b'n': 1,
+                # Public key
+                b'p': b"\x04SL&\xd2\x9f &\xd0+c'V\x0c\xb83\x18\xa8\x05\x8e\x13\xad\xbb\x13\xcb_\xb7|i14\xcb\xc8\x08oi\x81\x11\xb3\xdd\x1b^(\x083\x8e\xe3\xb66\xc4\x1c\xf5\xa5\x17\x13\x92~/\x1c\x97\x87\xf8\x06\xb6\x8d",
+                # Signer
+                b's': b'\xd8\x18\xe4\t\xf1x\x8bB\xa7[\x80\xd7\xce\x90\xcblNC\\o',
+                # Timestamp
+                b't': '2023-06-22T12:28:55.484240Z',
+                # Updated addresses
+                b'u': []
+            }
+            ```
+    * For sake of previous chain compatibility, `MaxGasPrice` and `GasLimit` fields are null-able and omittable.
+        * But after applying this proposal, Any tx that doesn't have `MaxGasPrice` and `GasLimit`, will be ignored by validator.
+* At least "fill-in" phase, every new account requires the Pledge with Migrator account to acquire Mead.
+* Despite of sunsetting activation system, `ActivateAccount` can be submitted. (act as no-op).
 * Even after fork, we don't have to keep validation codes for previous activation system since current canonical chain hadn't accepted inactivated user's transactions.
+
+[bencodex-python]: https://github.com/planetarium/bencodex-python
