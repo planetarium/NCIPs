@@ -117,7 +117,8 @@ In the long run, the fee-based limiting system is strongly dependent on the valu
 ### Current (Phase 0) → "fill-in"
 * During "fill-in" phase, Migrator who will be responsible for the migration should be chosen.
 * After choosing Migrator, the calculated maximum amount of Mead that can be used during the "fill-in" will be transferred to the Migrator.
-    * Calculation: `4` (max gas usages) * `7200` (blocks per day) * `100` (transactions per block) * `365` (expected days for "fill-in")
+    * To mint initial Mead, privileged action (i.e., `PrepareRewardAssets`) signed by protocol-aware moderator, to be needed.
+    * Calculation for initial minting: `4` (max gas usages) * `7200` (blocks per day) * `100` (transactions per block) *`365` (expected days for "fill-in")
 * Previous activated accounts will be contracted with Migrator upon its Pledge.
     * For proceeding with the Pledge publicly, Migrator should provide APIs and compatible client implementation as public.
     * Pledge should be configured as providing `4` Mead, since current major mempool policy is allowing 4 transactions from one account per block.
