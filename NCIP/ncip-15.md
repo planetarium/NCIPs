@@ -131,7 +131,7 @@ In the long run, the fee-based limiting system is strongly dependent on the valu
 * This proposal requires additional actions for Pledge, and new currency for Mead. 
     * Therefore it requires hard-fork and every nodes in the network must be updated to apply this changes.
 * Also, this proposal brings some changes for transaction data structure and semantics.
-    * Every transaction should specifies `MaxGasPrice` field (`0x6c`, `'m'`) as `1 * Mead`, and `GasLimit` field(`0x6d`, '`l`') as depending on action during "fill-in" phase.
+    * Every transaction should specify `MaxGasPrice` field (`0x6c`, `'m'`) as `1 * Mead`, and `GasLimit` field(`0x6d`, '`l`') as depending on the action types during "fill-in" phase.
         * Example with `MaxGasPrice` and `GasLimit` (using [bencodex-python][])
             ```python
             {
@@ -171,9 +171,9 @@ In the long run, the fee-based limiting system is strongly dependent on the valu
                 b'u': []
             }
             ```
-    * Note the folling list for GasLimit for each action. 
+    * Note the following list for `GasLimit` for each action. 
         * Gas Usage 4
-            * TransferAsset
+            * [`TransferAsset`](https://github.com/planetarium/lib9c/blob/v200020/Lib9c/Action/TransferAsset.cs)
         * Gas Usage 1
             * Rest of all actions
     * For sake of previous chain compatibility, `MaxGasPrice` and `GasLimit` fields are null-able and omittable.
