@@ -131,7 +131,7 @@ In the long run, the fee-based limiting system is strongly dependent on the valu
 * This proposal requires additional actions for Pledge, and new currency for Mead. 
     * Therefore it requires hard-fork and every nodes in the network must be updated to apply this changes.
 * Also, this proposal brings some changes for transaction data structure and semantics.
-    * Every transaction should specifies `MaxGasPrice` field (`0x6c`, `'m'`) as `1 * Mead`, and `GasLimit` field(`0x6d`, '`l`') as `4` during "fill-in" phase.
+    * Every transaction should specify `MaxGasPrice` field (`0x6c`, `'m'`) as `1 * Mead`, and `GasLimit` field(`0x6d`, '`l`') as depending on the action types during "fill-in" phase.
         * Example with `MaxGasPrice` and `GasLimit` (using [bencodex-python][])
             ```python
             {
@@ -154,8 +154,8 @@ In the long run, the fee-based limiting system is strongly dependent on the valu
                 ],
                 # Genesis block hash
                 b'g': b'E\x82%\r\r\xa3;\x06w\x9a\x84u\xd2\x83\xd5\xdd!\x0ch;\x9b\x99\x9dt\xd0?\xacOX\xfak\xce',
-                # GasLimit
-                b'l': 4,
+                # GasLimit (see also GasLimit list section below)
+                b'l': 1,
                 # MaxGasPrice (see also Mead section for the currency spec)
                 b'm': [{'decimalPlaces': b'\x12', 'minters': None, 'ticker': 'Mead'},
                         1000000000000000000],
@@ -171,6 +171,11 @@ In the long run, the fee-based limiting system is strongly dependent on the valu
                 b'u': []
             }
             ```
+    * Note the following list for `GasLimit` for each action. 
+        * Gas Usage 4
+            * [`TransferAsset`](https://github.com/planetarium/lib9c/blob/v200020/Lib9c/Action/TransferAsset.cs)
+        * Gas Usage 1
+            * Rest of all actions
     * For sake of previous chain compatibility, `MaxGasPrice` and `GasLimit` fields are null-able and omittable.
         * But after applying this proposal, Any tx that doesn't have `MaxGasPrice` and `GasLimit`, will be ignored by validator.
 * At least "fill-in" phase, every new account requires the Pledge with Migrator account to acquire Mead.
