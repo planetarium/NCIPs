@@ -109,7 +109,7 @@ sequenceDiagram
 
 This case represents two modified things from first one:
 
-1. The seller is using separated/dedicated garages (i.e., Cold/Hot Wallets) to isolate staked account from other transactions than `Stake` / `Claim`. it helps with security, as the stake requirements for obtaining Garage Tokens are high.
+1. The seller is using separated/dedicated garages (i.e., Cold/Hot Wallets) to isolate staked account from other transactions than `Stake` / `Claim`. it helps with security, as the stake requirements for obtaining Garage Tokens are pretty high.
 2. The seller no more deliver items to buyer's garage, but instead, it unload items to buyer's inventory directly. so buyers don't need to unload themselves manually.
 
 # Backward Compatibility
