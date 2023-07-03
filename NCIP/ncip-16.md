@@ -70,7 +70,7 @@ The main purpose of this proposal is, allowing item transferring safely. "safely
 * Due to nature, Unload requires an address for target avatar.
 * Unload doesn't require additional cost too.
 
-## Usecase: Off-chain Item Shop (w/ ESDs, like App Store)
+## Usecase 1: Simple Off-chain Item Purchase (w/ ESDs, like App Store)
 
 ```mermaid
 sequenceDiagram
@@ -88,6 +88,29 @@ sequenceDiagram
     SellerGarage-->>BuyerGarage: Deliver items
     BuyerGarage-->>Buyer: Unload items
 ```
+
+## Usecase 2: More practical Off-chain Item Purchase (w/ ESD, Cold/Hot Wallet)
+```mermaid
+sequenceDiagram
+    actor Seller
+	participant SCG as SellerGarage (Cold Wallet)
+	participant SHG as SellerGarage (Hot Wallet)
+    participant ESD
+    actor Buyer
+
+    Seller-->>Seller: Acquire items by Monster Collection
+    Seller-->>SCG: Load items for sale
+    SCG-->>SHG: Deliver items
+    Seller->>ESD: Register products
+    Buyer->>Seller: Purchase items
+    Buyer->>ESD: Pay with fiat
+    SHG-->>Buyer: Unload items
+```
+
+This case represents two modified things from first one:
+
+1. The seller is using separated/dedicated garages (i.e., Cold/Hot Wallets) to isolate staked account from other transactions than `Stake` / `Claim`. it helps with security, as the stake requirements for obtaining Garage Tokens are high.
+2. The seller no more deliver items to buyer's garage, but instead, it unload items to buyer's inventory directly. so buyers don't need to unload themselves manually.
 
 # Backward Compatibility
 * This proposal requires additional actions for Garage. thus it requires hard-fork and every nodes in the network must be updated to apply this changes.
