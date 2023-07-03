@@ -36,3 +36,4 @@ Once an NCIP is submitted for review, our editors can help you to import the doc
 | [13](https://docs.google.com/document/d/1L8d3KyO_Z6_BYcmDeMs-yv_SBYiEHiq_4kT0CjBmlFY/edit) | PoS Transition | JC Kim, Swen | Core | Accepted |
 | [14](https://docs.google.com/document/d/1oRftGvdTEaeH4zh2XYa6dToHZ394x5JeU_a7bRIPxM0/edit?usp=sharing) | Opening an Internal Lending Service | JH Kim | Ecosystem | Accepted |
 | [15](NCIP/ncip-15.md) | Usage based transaction limiting, and migrating from activation system | Swen Mun, Gilhwan Cheong, Libplanet Team | Core | Draft |
+| [16](NCIP/ncip-16.md) | Allowing item transfer with level design consideration | Swen Mun, Jaeho Lee, Seungmin Hyun | Core | Draft |
