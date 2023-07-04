@@ -83,8 +83,9 @@ sequenceDiagram
     Seller-->>Seller: Acquire items by Monster Collection
     Seller-->>SellerGarage: Load items for sale 
     Seller->>ESD: Register products
-    Buyer->>Seller: Purchase items
     Buyer->>ESD: Pay with fiat
+    ESD ->> Buyer: Issue receipts
+    Buyer ->> Seller: Request purchases w/receipt
     SellerGarage-->>BuyerGarage: Deliver items
     BuyerGarage-->>Buyer: Unload items
 ```
@@ -93,8 +94,8 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     actor Seller
-	participant SCG as SellerGarage (Cold Wallet)
-	participant SHG as SellerGarage (Hot Wallet)
+    participant SCG as SellerGarage (Cold Wallet)
+    participant SHG as SellerGarage (Hot Wallet)
     participant ESD
     actor Buyer
 
@@ -102,8 +103,9 @@ sequenceDiagram
     Seller-->>SCG: Load items for sale
     SCG-->>SHG: Deliver items
     Seller->>ESD: Register products
-    Buyer->>Seller: Purchase items
     Buyer->>ESD: Pay with fiat
+    ESD ->> Buyer: Issue receipts
+    Buyer ->> Seller: Request purchases w/receipt
     SHG-->>Buyer: Unload items
 ```
 
