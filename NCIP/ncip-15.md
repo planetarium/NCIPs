@@ -1,7 +1,7 @@
 ---
 NCIP: 15
 Title: Usage based transaction limiting, and migrating from activation system
-Status: Accepted
+Status: Final
 Type: Core
 Author: Swen Mun <swen@planetariumhq.com>, Gilhwan Cheong <gil@planetariumhq.com>, Libplanet Team <libplanet@planentariumhq.com> et al.
 Created: 2023-06-23
