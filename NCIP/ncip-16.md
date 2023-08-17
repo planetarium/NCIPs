@@ -49,7 +49,7 @@ The main purpose of this proposal is, allowing item transferring safely. "safely
 
     | Item | Cost |
     | ---- | ---- |
-    | AP Portion | 0.16 |
+    | AP Potion | 0.16 |
     | Hourglass | 0.0016 |
     | Golden Meat | 1 |
     | Golden Dust | 10 |
