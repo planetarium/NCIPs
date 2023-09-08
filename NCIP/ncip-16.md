@@ -51,9 +51,10 @@ The main purpose of this proposal is, allowing item transferring safely. "safely
     | ---- | ---- |
     | AP Potion | 0.16 |
     | Hourglass | 0.0016 |
-    | Golden Meat | 1 |
-    | Golden Dust | 10 |
+    | Golden Dust | 1 |
+    | Silver Dust | 0.1 |
     | Goldenleaf Runestone | 10 |
+    | Crystal | 0.0000001 |
 
     * Fee table might be treated as chain state. in that case, it can be updated without any hard-fork.
 * **Garage Token** is a new token for Garage. 
