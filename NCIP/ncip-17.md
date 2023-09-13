@@ -32,7 +32,7 @@ To eliminate fairness and complexity concern, this proposal suggests more simpli
 To simplify, `ClaimStakeReward` action should know reward policy for each users. specifically, the following changes are required:
 
 ## `Stake`
-`Stake` action need to record the reward policy at the time of staking.To accomplish this, we need to keep reward policy as immutable and dedicate state address per reward policy.
+`Stake` action needs to record the reward policy at the time of staking.To accomplish this, we need to keep reward policy as immutable and dedicate state address per reward policy.
 
 ## `Contract`
 
@@ -41,17 +41,17 @@ For sake of ease, the new state model called `Contract` will be needed. The `Con
 - `StakeRegularFixedRewardSheetTableName` (`string`)
 - `StakeRegularRewardSheetTableName` (`string`)
 - `RewardInterval` (`long`)
-- `lockupInterval` (`long`)
+- `LockupInterval` (`long`)
 
 ## `ClaimStakeReward`
 
 ![image](https://github.com/planetarium/NCIPs/assets/128436/7a291498-209e-41dc-a9fa-3efa705916a9)
 
-`ClaimStakeReward` action need to be processed based only recorded policy, without any other aggregation.
+`ClaimStakeReward` action needs to be processed based only recorded policy, without any other aggregation.
 
 # Backward Compatibility
 
 * This proposal requires the hard-forks as like below reasons:
-    - The proposed `Stake` action will produce different output state due to additional fields (i.e., reward policy )
+  - The proposed `Stake` action will produce different output state due to additional fields.(i.e., reward policy)
   - The proposed `ClaimStakeReward` action will produce different output state since it wouldn't aggregate based upon previous policies anymore.
 * It means that, every nodes in the network must be updated to apply this changes.
