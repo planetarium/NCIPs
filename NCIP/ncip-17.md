@@ -32,9 +32,26 @@ To eliminate fairness and complexity concern, this proposal suggests more simpli
 To simplify, `ClaimStakeReward` action should know reward policy for each users. specifically, the following changes are required:
 
 ## `Stake`
-`Stake` action needs to record the reward policy at the time of staking.To accomplish this, we need to keep reward policy as immutable and dedicate state address per reward policy.
+`Stake` action needs to record the reward policy at the time of staking. To accomplish this, we need to keep reward policy as immutable and dedicate state address per reward policy. To keep reward policy as immutable, it stores the reward policy in a new state model called `StakeStateV2`.
 
-## `Contract`
+### `StakeStateV2`
+
+`StakeStateV2` is a new state model to store its staking Contract in the state.
+
+From `StakeStateV2`, a `Contract` is created with the information at the time of the staking contract and stored in the state. This is to be used when receiving rewards.
+
+The state is stored in List format rather than Dictionary. The schema is as follows.
+```
+[
+  "stake_state",              # Constant string. state type name.
+  2,                          # Constant number. state type version.
+  serialized(Contract),       # A contract to keep the reward policy as immutable.
+  StaredBlockIndex,           # The block index when the staking contract has been started.
+  ReceivedBlockIndex,         # The block index when the staking rewards were claimed most recently.
+]
+```
+
+### `Contract`
 
 For sake of ease, the new state model called `Contract` will be needed. The `Contract` model consists of for fields as below:
 
@@ -42,6 +59,19 @@ For sake of ease, the new state model called `Contract` will be needed. The `Con
 - `StakeRegularRewardSheetTableName` (`string`)
 - `RewardInterval` (`long`)
 - `LockupInterval` (`long`)
+
+The state is stored in List format rather than Dictionary. The schema is as follows.
+
+```
+[
+  "stake_contract",           # Constant string. state type name.
+  1,                          # Constant number. state type version.
+  StakeRegularFixedRewardSheetTableName,        # The `StakeRegularFixedRewardSheet` tablesheet's name from `StakePolicySheet` when the staking contract was signed.
+  StakeRegularRewardSheetTableName,       # The `StakeRegularRewardSheet` tablesheet's name from `StakePolicySheet` when the staking contract was signed.
+  RewardInterval,    # The block interval to claim staking rewards of this staking contract.
+  LockupInterval,    # The block interval to cancel this staking contract.
+]
+```
 
 ## `ClaimStakeReward`
 
