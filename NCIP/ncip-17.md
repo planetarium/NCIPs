@@ -95,7 +95,7 @@ You'll receive the staking rewards based on those sheets.
 [StakeRegularRewardSheet_V2]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=5510416
 [StakeRegularRewardSheet_V3]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=6641600
 [StakeRegularRewardSheet_V4]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=7097213
-[StakeRegularRewardSheet_V5]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=7624263
+[StakeRegularRewardSheet_V5]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=7897829
 [StakeRegularFixedRewardSheet_V1]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularFixedRewardSheet?index=4285276
 [StakeRegularFixedRewardSheet_V2]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularFixedRewardSheet?index=6641597
 
