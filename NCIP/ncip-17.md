@@ -83,11 +83,11 @@ The state is stored in List format rather than Dictionary. The schema is as foll
 
 Staking actions before `stake3` and `claim_stake_reward9`, stores `StakeState` to record when the staking contract has been started and when the staking rewards were claimed. The `stake3` and `claim_stake_reward9` actions apply NCIP-17 with rules to migrate `StakeState` to `StakeStateV2`.
 
- - If the staking contract started in `0` ~ `5,510,416`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V1] and [StakeRegularFixedRewardSheet_V1].
- - If the staking contract started in `5,510,416` ~ `6,700,000`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V2] and [StakeRegularFixedRewardSheet_V1].
- - If the staking contract started in `6,700,000` ~ `6,910,000`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V3] and [StakeRegularFixedRewardSheet_V2].
- - If the staking contract started in `6,910,000` ~ `7,650,000`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V4] and [StakeRegularFixedRewardSheet_V2].
- - If the staking contract started after `7,650,000`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V5] and [StakeRegularFixedRewardSheet_V2].
+ - If the staking contract started in `0`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V1] and [StakeRegularFixedRewardSheet_V1].
+ - If the staking contract started in `1`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V2] and [StakeRegularFixedRewardSheet_V2].
+ - If the staking contract started in `2`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V3] and [StakeRegularFixedRewardSheet_V2].
+ - If the staking contract started in `3`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V4] and [StakeRegularFixedRewardSheet_V2].
+ - If the staking contract started after `4`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V5] and [StakeRegularFixedRewardSheet_V2].
 
 You'll receive the staking rewards based on those sheets.
 
