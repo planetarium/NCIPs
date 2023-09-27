@@ -81,23 +81,20 @@ The state is stored in List format rather than Dictionary. The schema is as foll
 
 ## `StakeState` to `StakeStateV2`
 
-Staking actions before `stake3` and `claim_stake_reward9`, stores `StakeState` to record when the staking contract has been started and when the staking rewards were claimed. The `stake3` and `claim_stake_reward9` actions apply NCIP-17 with rules to migrate `StakeState` to `StakeStateV2`.
+Staking actions before `stake3` and `claim_stake_reward9`, stores `StakeState` to record when the staking contract has been started and when the staking rewards were claimed. The `stake3` and `claim_stake_reward9` actions apply NCIP-17 with rules to migrate `StakeState` to `StakeStateV2`, and that time the `Contract` of `StakeStateV2` is determined as follows.(see also [GameConfigSheet])
 
- - If the staking contract started in `0` ~ `5,510,416`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V1] and [StakeRegularFixedRewardSheet_V1].
- - If the staking contract started in `5,510,416` ~ `6,700,000`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V2] and [StakeRegularFixedRewardSheet_V1].
- - If the staking contract started in `6,700,000` ~ `6,910,000`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V3] and [StakeRegularFixedRewardSheet_V2].
- - If the staking contract started in `6,910,000` ~ `7,650,000`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V4] and [StakeRegularFixedRewardSheet_V2].
- - If the staking contract started after `7,650,000`, it will migrate to `StakeStateV2` with [StakeRegularRewardSheet_V5] and [StakeRegularFixedRewardSheet_V2].
+- `StakeRegularFixedRewardSheetTableName`: [StakeRegularFixedRewardSheet_V2]
+- `StakeRegularRewardSheetTableName`: [StakeRegularRewardSheet_V5]
+- `RewardInterval`: 50,400([StakeState.RewardInterval])
+- `LockupInterval`: 201,600([StakeState.LockupInterval])
 
-You'll receive the staking rewards based on those sheets.
+You'll receive the staking rewards based on those contract.
 
-[StakeRegularRewardSheet_V1]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=4285277
-[StakeRegularRewardSheet_V2]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=5510416
-[StakeRegularRewardSheet_V3]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=6641600
-[StakeRegularRewardSheet_V4]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=7097213
-[StakeRegularRewardSheet_V5]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=7897829
-[StakeRegularFixedRewardSheet_V1]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularFixedRewardSheet?index=4285276
+[GameConfigSheet]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/GameConfigSheet?index=7916080
 [StakeRegularFixedRewardSheet_V2]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularFixedRewardSheet?index=6641597
+[StakeRegularRewardSheet_V5]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=7897829
+[StakeState.RewardInterval]: https://github.com/planetarium/lib9c/blob/fe86a78e29d7d15486779b133bea21ba0ec63f30/Lib9c/Model/State/StakeState.cs#L54
+[StakeState.LockupInterval]: https://github.com/planetarium/lib9c/blob/fe86a78e29d7d15486779b133bea21ba0ec63f30/Lib9c/Model/State/StakeState.cs#L55
 
 # Backward Compatibility
 
