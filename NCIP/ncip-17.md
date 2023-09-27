@@ -93,8 +93,8 @@ You'll receive the staking rewards based on those contract.
 [GameConfigSheet]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/GameConfigSheet?index=7916080
 [StakeRegularFixedRewardSheet_V2]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularFixedRewardSheet?index=6641597
 [StakeRegularRewardSheet_V5]: https://planetarium-9c-board.netlify.app/9c-main/tablesheet/StakeRegularRewardSheet?index=7897829
-[StakeState.RewardInterval]: https://github.com/planetarium/lib9c/blob/main/Lib9c/Model/State/StakeState.cs#L54
-[StakeState.LockupInterval]: https://github.com/planetarium/lib9c/blob/main/Lib9c/Model/State/StakeState.cs#L55
+[StakeState.RewardInterval]: https://github.com/planetarium/lib9c/blob/fe86a78e29d7d15486779b133bea21ba0ec63f30/Lib9c/Model/State/StakeState.cs#L54
+[StakeState.LockupInterval]: https://github.com/planetarium/lib9c/blob/fe86a78e29d7d15486779b133bea21ba0ec63f30/Lib9c/Model/State/StakeState.cs#L55
 
 # Backward Compatibility
 
