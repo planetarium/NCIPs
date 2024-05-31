@@ -2,13 +2,16 @@
 ![Nine Chronicles Banner][9c-banner]
 
 [![Discord][Discord-badge]][Discord]
+[![Discord Dev][Discord-dev-badge]][Discord Dev]
 
 Nine Chronicles Improvement Proposals (NCIPs) describe standards for [Nine Chronicles][9c], a fully open-sourced decentralized RPG.
 
 An NCIP is a design document providing information to the Nine Chronicles community, or describing a new feature for Nine Chronicles software. We intend NCIPs to be the primary mechanisms for proposing new features, for collecting community input on an issue, and for documenting the design decisions that have gone into Nine Chronicles.
 
-[Discord-badge]: https://img.shields.io/discord/539405872346955788.svg?color=7289da&logo=discord&logoColor=white
+[Discord-badge]: https://img.shields.io/discord/539405872346955788.svg?color=7289da&logo=discord&logoColor=white&label=Planetarium
+[Discord-dev-badge]: https://img.shields.io/discord/928926944937013338?color=6278DA&label=Planetarium-dev&logo=discord&logoColor=white
 [Discord]: https://discord.gg/planetarium
+[Discord Dev]: https://discord.gg/planetarium
 [9c]: https://nine-chronicles.com
 [9c-banner]: 9c-banner.jpeg
 
