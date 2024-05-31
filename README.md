@@ -11,7 +11,7 @@ An NCIP is a design document providing information to the Nine Chronicles commun
 [Discord-badge]: https://img.shields.io/discord/539405872346955788.svg?color=7289da&logo=discord&logoColor=white&label=Planetarium
 [Discord-dev-badge]: https://img.shields.io/discord/928926944937013338?color=6278DA&label=Planetarium-dev&logo=discord&logoColor=white
 [Discord]: https://discord.gg/planetarium
-[Discord Dev]: https://discord.gg/planetarium
+[Discord Dev]: https://discord.com/invite/RYJDyFRYY7
 [9c]: https://nine-chronicles.com
 [9c-banner]: 9c-banner.jpeg
 
