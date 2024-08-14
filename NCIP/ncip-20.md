@@ -4,7 +4,7 @@ Title: NCG Staking-Based NCG Distribution
 Status: Draft
 Type: Core
 Author: Jaeho Lee <jaeho@planetariumhq.com.>.
-Created: 2024-08-014
+Created: 2024-08-14
 ---
 
 
