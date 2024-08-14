@@ -3,7 +3,7 @@ NCIP: 21
 Title: Improvements to the Selection of Adventure Bosses for Seasonal Bosses
 Status: Draft
 Type: Core
-Author: Jaeho Lee <jaeho@planetariumhq.com.>.
+Author: Jaeho Lee <jaeho@planetariumhq.com>
 Created: 2024-08-14
 ---
 
