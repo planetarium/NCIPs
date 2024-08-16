@@ -3,7 +3,7 @@ NCIP: 20
 Title: NCG Staking-Based NCG Distribution
 Status: Draft
 Type: Core
-Author: Jaeho Lee <jaeho@planetariumhq.com>
+Author: Jaeho Lee <jaeho@planetariumhq.com>, ChunUng Yang <yang@planetariumhq.com>, Suho Lee <suho@planetariumhq.com>
 Created: 2024-08-14
 ---
 
@@ -40,7 +40,7 @@ As we are preparing for the transition to PoS, we would like to manually proceed
         | 3rd | Mid-October | NCG used for adventure bosses from mid-September to mid-October + 9C gameplay NCG from September to mid-October |
         - 9C gameplay NCG spent on the following:
             - Shop Fee
-            - Item Enhancement
+            - Item Upgrade
             - Arena Ticket
             - World Boss Ticket
             - Event Dungeon Ticket
