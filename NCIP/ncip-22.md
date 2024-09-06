@@ -1,6 +1,6 @@
 ---
 NCIP: 22
-Title: A system for continuously crafting the desired equipment: Custom Craft
+Title: A system for continuously crafting the desired equipment - Custom Craft
 Type: Core
 Author: Jaeho Lee <jaeho@planetariumhq.com>, Jonghyeon Moon <hyeon@planetariumhq.com>, Seonmin Kim <kimsm@planetariumhq.com>
 Created: 2024-09-06
@@ -79,6 +79,7 @@ When crafting equipment, detailed information about the equipment to be crafted 
 - There are unique appearances that can only be selected through the random appearance selection.
 - More than 30 new appearances will be added, revealed for the first time through custom crafting.
 
+
 ### **Expected Schedule**
 
 - **September 6**: Previewnet open testing begins (9c) - Play with the community.
@@ -91,3 +92,4 @@ When crafting equipment, detailed information about the equipment to be crafted 
 
 - A new custom equipment crafting action will be added, and all nodes will need to be updated to interpret this action.
 - No additional migration is required.
+
