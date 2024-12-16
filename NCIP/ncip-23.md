@@ -1,6 +1,6 @@
 ---
 NCIP: 23
-Title: Another way to obtain higher-tier equipment: the Synthesis System.
+Title: Another way to obtain higher-tier equipment - the Synthesis System.
 Type: Core
 Author: Jaeho Lee <jaeho@planetariumhq.com>, ChunUng Yang <yang@planetariumhq.com>, Eugene Hong <eugene@planetariumhq.com>
 Created: 2024-12-16
@@ -75,7 +75,7 @@ On failure, a new piece of equipment of the same rarity as the materials is craf
 ### **Expected Schedule**
 
 - **December 16**: Previewnet open testing begins (9c) - Play with the community.
-    - 가이드 url
+     https://planetarium.notion.site/Previewnet-GUIDE-241216-15ded889905f8048b84afbab68ee81e6
 - **December 18**: Collect community feedback
 - **December 19**: Final version previewnet release completion.
 - **December 20**: Mainnet release.
