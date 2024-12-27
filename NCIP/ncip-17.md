@@ -3,7 +3,7 @@ NCIP: 17
 Title: Revise `ClaimStakeReward` 
 Status: Draft
 Type: Core
-Author: Swen Mun <swen@planetariumhq.com>, Nine Chronicles DX team <game-dx@planetariumhq.com> et al.
+Author: Swen Mun <swen@planetariumhq.com>, Nine Chronicles DX team <engineering@planetariumhq.com> et al.
 Created: 2023-09-05
 ---
 # Abstract
