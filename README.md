@@ -40,5 +40,5 @@ Once an NCIP is submitted for review, our editors can help you to import the doc
 | [14](https://docs.google.com/document/d/1oRftGvdTEaeH4zh2XYa6dToHZ394x5JeU_a7bRIPxM0/edit?usp=sharing) | Opening an Internal Lending Service | JH Kim | Ecosystem | Accepted |
 | [15](NCIP/ncip-15.md) | Usage based transaction limiting, and migrating from activation system | Swen Mun, Gilhwan Cheong, Libplanet Team | Core | Final |
 | [16](NCIP/ncip-16.md) | Allowing item transfer with level design consideration | Swen Mun, Jaeho Lee, Seungmin Hyun | Core | Draft |
-| [17](NCIP/ncip-17.md) | Revise `ClaimStakeReward` | Swen Mun, Nine Chronicles DX team <game-dx@planetariumhq.com> | Core | Draft |
+| [17](NCIP/ncip-17.md) | Revise `ClaimStakeReward` | Swen Mun, Nine Chronicles DX team <engineering@planetariumhq.com> | Core | Draft |
 | [18](NCIP/ncip-18.md) | Retrieve FunngibleAssetValue transfer from avatar to agent | ChunUng Yang, Nine Chronicles team <9c-dev@planetariumhq.com> | Core | Draft |
