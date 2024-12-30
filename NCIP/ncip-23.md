@@ -49,19 +49,19 @@ On failure, a new piece of equipment of the same rarity as the materials is craf
     
     | rarity | number of materials | success rate(%) |
     | --- | --- | --- |
-    | normal | 5 | 50 |
-    | rare | 6 | 40 |
-    | epic | 8 | 20 |
-    | unique | 10 | 20 |
-    | legend | 5 | 10 |
+    | normal | 10 | 80 |
+    | rare | 10 | 75 |
+    | epic | 12 | 50 |
+    | unique | 10 | 40 |
+    | legend | 6 | 25 |
     | sacred | 3 | 0 |
     - Grimoire
     
     | rarity | number of materials | success rate(%) |
     | --- | --- | --- |
-    | epic | 5 | 50 |
-    | unique | 5 | 50 |
-    | legend | 5 | 10 |
+    | epic | 8 | 80 |
+    | unique | 6 | 60 |
+    | legend | 5 | 20 |
     | sacred | 3 | 0 |
 - Each attempt can only process one type of equipment at a single rarity, up to a maximum of **12 attempts**.
 - **On success**, equipment of the next rarity is obtained. **On failure**, equipment of the current rarity is re-obtained.
