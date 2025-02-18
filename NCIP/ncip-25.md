@@ -1,5 +1,5 @@
 ---
-NCIP: 24
+NCIP: 25
 Title: Improvement of World Boss Reward System
 Type: Core
 Author: Jaeho Lee <jaeho@planetariumhq.com>, ChunUng Yang <yang@planetariumhq.com>, Eugene Hong <eugene@planetariumhq.com>
