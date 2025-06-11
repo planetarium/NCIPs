@@ -48,16 +48,6 @@ sequenceDiagram
 
 이 액션은 `IAccount.RemoveState()` 메서드를 호출하여 해당 주소의 상태를 제거합니다.
 
-### 보안 고려사항
-
-`RemoveAddressState` 액션은 체인에서 상태를 영구적으로 삭제하는 위험한 작업입니다. 한번 삭제된 상태는 복구가 불가능하며, 이는 체인의 무결성에 심각한 영향을 미칠 수 있습니다. 이러한 위험성 때문에 다음과 같은 제한사항이 적용됩니다:
-
-1. 이 액션은 특별히 지정된 관리자 계정만이 실행할 수 있습니다.
-2. 관리자 계정 목록은 체인의 정책 설정을 통해 엄격하게 관리됩니다.
-3. 모든 상태 제거 작업은 체인에 기록되어 감사가 가능합니다.
-
-따라서 이 액션을 실행하기 전에는 반드시 삭제될 상태의 영향도를 철저히 분석하고, 필요한 경우 `SetAddressState`를 통한 복구 계획을 수립해야 합니다.
-
 ## `SetAddressState`
 
 이 액션은 `RemoveAddressState`로 제거된 상태를 복구하거나 새로운 상태를 설정하는 데 사용됩니다. Plain value는 다음과 같은 스키마로 저장됩니다:
@@ -88,21 +78,30 @@ sequenceDiagram
 
 This action calls the `IAccount.SetState()` method to set the state at the specified address.
 
-### 보안 고려사항
+## 보안 고려사항
 
-`SetAddressState` 액션은 주소의 기존 상태를 새로운 상태로 덮어쓸 수 있는 권한을 가지고 있습니다. 이는 다음과 같은 보안 위험을 수반합니다:
+이 NCIP에서 제안하는 두 액션은 체인의 상태를 직접적으로 변경할 수 있는 강력한 권한을 가지고 있습니다. 각 액션은 다음과 같은 보안 위험을 수반합니다:
 
-1. 기존 상태의 의도하지 않은 손실이 발생할 수 있습니다.
-2. 악의적인 상태 변경으로 시스템의 정상적인 동작이 방해될 수 있습니다.
-3. 체인의 일관성이 깨질 수 있는 위험이 있습니다.
+### RemoveAddressState의 위험성
+- 체인에서 상태를 영구적으로 삭제하는 위험한 작업입니다.
+- 한번 삭제된 상태는 복구가 불가능하며, 이는 체인의 무결성에 심각한 영향을 미칠 수 있습니다.
 
-이러한 위험성 때문에 `RemoveAddressState`와 마찬가지로 다음과 같은 제한사항이 적용됩니다:
+### SetAddressState의 위험성
+- 주소의 기존 상태를 새로운 상태로 덮어쓸 수 있습니다.
+- 기존 상태의 의도하지 않은 손실이 발생할 수 있습니다.
+- 악의적인 상태 변경으로 시스템의 정상적인 동작이 방해될 수 있습니다.
+- 체인의 일관성이 깨질 수 있는 위험이 있습니다.
 
-1. 이 액션은 특별히 지정된 관리자 계정만이 실행할 수 있습니다.
+이러한 위험성 때문에 두 액션 모두 다음과 같은 제한사항이 적용됩니다:
+
+1. 이 액션들은 특별히 지정된 관리자 계정만이 실행할 수 있습니다.
 2. 관리자 계정 목록은 체인의 정책 설정을 통해 엄격하게 관리됩니다.
-3. 모든 상태 설정 작업은 체인에 기록되어 감사가 가능합니다.
+3. 모든 상태 변경 작업은 체인에 기록되어 감사가 가능합니다.
 
-따라서 이 액션을 실행하기 전에는 반드시 기존 상태와 새로운 상태의 영향도를 철저히 분석해야 합니다.
+따라서 이러한 액션들을 실행하기 전에는 반드시 다음 사항들을 고려해야 합니다:
+- 상태 변경의 영향도를 철저히 분석
+- RemoveAddressState 사용 시 SetAddressState를 통한 복구 계획 수립
+- SetAddressState 사용 시 기존 상태와 새로운 상태의 영향도 분석
 
 # Backward Compatibility
 
@@ -164,16 +163,6 @@ sequenceDiagram
 
 This action calls the `IAccount.RemoveState()` method to remove the state from the specified address.
 
-### Security Considerations
-
-The `RemoveAddressState` action is a dangerous operation that permanently deletes states from the chain. Once a state is removed, it cannot be recovered, which can significantly impact the chain's integrity. Due to these risks, the following restrictions apply:
-
-1. This action can only be executed by specially designated administrator accounts.
-2. The list of administrator accounts is strictly managed through chain policy settings.
-3. All state removal operations are recorded on the chain for audit purposes.
-
-Therefore, before executing this action, it is crucial to thoroughly analyze the impact of the state removal and, if necessary, establish a recovery plan using `SetAddressState`.
-
 ## `SetAddressState`
 
 This action is used to restore states removed by `RemoveAddressState` or set new states. The plain value is stored with the following schema:
@@ -204,21 +193,30 @@ sequenceDiagram
 
 This action calls the `IAccount.SetState()` method to set the state at the specified address.
 
-### Security Considerations
+## Security Considerations
 
-The `SetAddressState` action has the authority to overwrite existing states of an address with new states. This carries the following security risks:
+The two actions proposed in this NCIP have powerful permissions that can directly modify the chain's state. Each action carries the following security risks:
 
-1. Unintended loss of existing states may occur.
-2. Malicious state changes could interfere with normal system operation.
-3. There is a risk of breaking chain consistency.
+### RemoveAddressState Risks
+- It is a dangerous operation that permanently deletes states from the chain.
+- Once a state is removed, it cannot be recovered, which can significantly impact the chain's integrity.
 
-Due to these risks, like `RemoveAddressState`, the following restrictions apply:
+### SetAddressState Risks
+- Has the authority to overwrite existing states of an address with new states.
+- Unintended loss of existing states may occur.
+- Malicious state changes could interfere with normal system operation.
+- There is a risk of breaking chain consistency.
 
-1. This action can only be executed by specially designated administrator accounts.
+Due to these risks, both actions have the following restrictions:
+
+1. These actions can only be executed by specially designated administrator accounts.
 2. The list of administrator accounts is strictly managed through chain policy settings.
-3. All state setting operations are recorded on the chain for audit purposes.
+3. All state modification operations are recorded on the chain for audit purposes.
 
-Therefore, before executing this action, it is crucial to thoroughly analyze the impact of both existing and new states.
+Therefore, before executing these actions, the following considerations must be made:
+- Thoroughly analyze the impact of state changes
+- When using RemoveAddressState, establish a recovery plan using SetAddressState
+- When using SetAddressState, analyze the impact of both existing and new states
 
 # Backward Compatibility
 
