@@ -26,10 +26,12 @@ Plain value는 다른 액션들과 마찬가지로 Dictionary 형식으로 저�
 ```
 {
   "type_id": "remove_address_state",                # 액션 타입 이름
-  "values": [
-    AccountAddress,                                 # 상태를 제거할 대상 account address
-    Address                                         # 제거할 상태의 주소
-  ]
+  "values": {
+    "r": [                                          # 제거할 상태 목록
+      [AccountAddress, Address],                    # (계정 주소, 대상 주소) 쌍의 리스트
+      ...
+    ]
+  }
 }
 ```
 
@@ -55,11 +57,12 @@ sequenceDiagram
 ```
 {
   "type_id": "set_address_state",                   # 액션 타입 이름
-  "values": [
-    AccountAddress,                                 # 상태를 설정할 대상 account address
-    Address,                                        # 설정할 상태의 주소
-    Value                                          # 설정할 상태 값
-  ]
+  "values": {
+    "s": [                                          # 설정할 상태 목록
+      [AccountAddress, Address, Value],             # (계정 주소, 대상 주소, 상태 값) 쌍의 리스트
+      ...
+    ]
+  }
 }
 ```
 
@@ -141,10 +144,12 @@ The plain value is stored in Dictionary format like other actions. The schema is
 ```
 {
   "type_id": "remove_address_state",                # action type name
-  "values": [
-    AccountAddress,                                 # target account address to remove state from
-    Address                                         # address of the state to remove
-  ]
+  "values": {
+    "r": [                                          # list of states to remove
+      [AccountAddress, Address],                    # list of (account address, target address) pairs
+      ...
+    ]
+  }
 }
 ```
 
@@ -170,11 +175,12 @@ This action is used to restore states removed by `RemoveAddressState` or set new
 ```
 {
   "type_id": "set_address_state",                   # action type name
-  "values": [
-    AccountAddress,                                 # target account address to set state to
-    Address,                                        # address of the state to set
-    Value                                          # state value to set
-  ]
+  "values": {
+    "s": [                                          # list of states to set
+      [AccountAddress, Address, Value],             # list of (account address, target address, state value) pairs
+      ...
+    ]
+  }
 }
 ```
 
