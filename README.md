@@ -49,3 +49,4 @@ Once an NCIP is submitted for review, our editors can help you to import the doc
 | [24](NCIP/ncip-24.md) | Arena Improvements | Jaeho Lee <jaeho@planetariumhq.com>, jeahyun choi <jonny@planetariumhq.com>, jiwon <jiwon@planetariumhq.com> | Core | Final |
 | [25](NCIP/ncip-25.md) | Improvement of World Boss Reward System | Jaeho Lee <jaeho@planetariumhq.com>, ChunUng Yang <yang@planetariumhq.com>, Eugene Hong <eugene@planetariumhq.com> | Core | Final |
 | [26](NCIP/ncip-26.md) | Remove States from Address | Nine Chronicles team <9c-dev@planetariumhq.com> | Core | Final |
+| [27](NCIP/ncip-27.md) | GrantItems-based operations delivery and month-end settlement | ChunUng Yang <yang@planetariumhq.com> | Core | Draft |
